@@ -1,0 +1,182 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/html">
+    <head>
+        <title>Never Left Behind</title>
+        <!-- Bootstrap CSS imbed link -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Bootstrap JS imbed link -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+        <style>
+            @font-face {
+                font-family: Oswald;
+                src: url("../media/fonts/Oswald-VariableFont_wght.ttf");
+            }
+            @font-face {
+                font-family: "Open Sans";
+                src: url("../media/fonts/OpenSans-VariableFont_wdth,wght.ttf")
+            }
+            body{font-family: Oswald;}
+
+            header{
+                width: 100%;
+                height: 310px;
+                background-image: url("../media/White_on_black_dotted_world_map_vector.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+                }
+
+            section{
+                background-size: 16rem;
+                background-color: rgba(0, 0, 0, 0.65);
+            }
+
+            .title_text{font-size: 60px;}
+
+            .frenchInfo{
+                font-family: "Open Sans";
+                font-size: 1.3rem;
+                }
+
+            .BG{
+                width: 100%;
+                height: 210px;
+                background-image: url("../media/travel_pic.jpg");
+                background-size: cover;
+                background-position: center;
+            }
+
+            .BGText{background-color: rgba(255,255,255,0.4);}
+
+            .Script_Text{font-family: "Open Sans";}
+
+            .cardA{
+                background-color: #bb2d3b;
+                font-family: Oswald;
+                }
+
+            .cardB{
+                background-color: #ffffff;
+                font-family: Oswald;
+                }
+
+            .card_text{font-family: "Open Sans";}
+        </style>
+    </head>
+    <body>
+        <header>
+                <section>
+                    <div class="jumbotron rounded-bottom">
+                            <div class="text-left">
+                                <h4 class=" Grade_start text-white">Operation: Never Left Behind</h4>
+                                <h6 class="text-white">Powered by <a href=https://cloud.google.com/appengine>Google App engine</a>.</h6>
+                            </div>
+
+                            <div class="text-center align-text-bottom text-white pt-5">
+                                <h2 class="title_text">Never Left Behind: Translate (2021 edition)</h2>
+                            </div>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                    </div>
+                </section>
+        </header>
+        <div class="container-fluid text-center text-dark pt-3">
+            <h1>Welcome to the Never Left Behind Translator!</h1>
+            <p class="frenchInfo container-fluid"> The one app that helps you translate those short english phrases and words into french.
+                We welcome you to use our app for finding the french equivalent of an english word,
+                trying to learn french, or even planning to visit a francophone country.</p>
+        </div>
+        <section class="BGText">
+            <div class="BG">
+                <section class="BGText">
+                    <h1 class="text-center text-black pt-5">DON'T GET LEFT BEHIND...
+                        <br>USE OUR APP AND STAY ON TRACK</h1>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                </section>
+            </div>
+        </section>
+
+        {% if trans['text'] %}
+            <h4 class="Script_Text">Previous translation</h4>
+            <li class="Script_Text"><b>Original</b>:   {{ orig['text'] }}  (<i>{{ orig['lc'][0] }}</i>)</li>
+            <li class="Script_Text"><b>Translated</b>: {{ trans['text'] }} (<i>{{ trans['lc'][0] }}</i>)</li>
+        {% endif %}
+
+        <h4>Enter <i>{{ orig['lc'][1] }}</i> text to translate to <i>{{ trans['lc'][1] }}</i>:</h4>
+        <form method="POST"><input name="text"><input type="submit"></form>
+
+        <div id="accordion">
+            <div class="cardA card pt-3">
+                <div class="card-header">
+                  <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseOne">
+                      <h2 class="text-white">Our Mission</h2>
+                  </a>
+                </div>
+                <div id="collapseOne" class="collapse show" data-bs-parent="#accordion">
+                  <div class="card_text card-body text-white">
+                    Operation neverLeftBehind is a government software firm that focuses on creating solutions that help international travelers alleviate unnecessary stress and anxiety when traveling.
+                      Our firm is very young, but we are dedicated to building solutions to help all international travelers feel more confident & comfortable anywhere they choose to go.
+                  </div>
+                </div>
+            </div>
+
+             <div class="cardB card pt-3">
+                <div class="card-header">
+                  <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseTwo">
+                      <h2 class="text-black">The Purpose of Our App</h2>
+                  </a>
+                </div>
+                <div id="collapseTwo" class="collapse show" data-bs-parent="#accordion">
+                  <div class="card_text card-body text-black">
+                      Our app is designed to help english-speaking travelers visiting francophone countries.
+                      We intend for our users to use this app to help them understand words and short phrases in french.
+                      In this future, this app will allow english-speaking users to select 10 other languages to translate english words into.
+                  </div>
+                </div>
+            </div>
+
+             <div class="cardA card pt-3">
+                <div class="card-header">
+                  <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseThree">
+                      <h2 class="text-white">How to Properly Use our app:</h2>
+                  </a>
+                </div>
+                <div id="collapseThree" class="collapse show" data-bs-parent="#accordion">
+                  <div class="card_text card-body text-white">
+                    First, enter the text (in english) for the word you’d like translated and then press the ‘submit’ button.
+                      Then, Voilà! The french translation of the word you entered will be available for you to review.
+                      !Important Notice: Please be sure to only enter a maximum of two words into the translator.!
+                      are still working on our app to enable the translation of full phrases.
+                  </div>
+                </div>
+            </div>
+
+             <div class="cardB card pt-3">
+                <div class="card-header">
+                  <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseFour">
+                      <h2 class="text-black">Is This app Available for other languages?</h2>
+                  </a>
+                </div>
+                <div id="collapseFour" class="collapse show" data-bs-parent="#accordion">
+                  <div class="card_text card-body text-black">
+                    At the moment, this app is only for users to translate words from english to french.
+                      However, we are working on releasing a premium version of this app for users to translate words and phrases from english into 10 different languages!
+                      (Be sure to visit in a few months to access this new, exclusive feature. )
+                  </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+           <div class="text-white container-fluid p-5 bg-primary">
+               <p class="text-left">This site is made by Taneya Boyde, Shetelka Blackmon, Jeanna Works,
+                   <br>Haisan Williams, Bakar Haythar, Aiysha Mustapha, Harold Garner.</p>
+            </div> 
+        </footer>
+    </body>
+</html>
